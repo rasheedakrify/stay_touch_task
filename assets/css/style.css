@@ -1,0 +1,28 @@
+  body {
+      font-family: Arial, sans-serif;
+  }
+
+  .experience-section {
+      margin: 20px;
+  }
+
+  .experience-block {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+  }
+
+  .experience-title {
+      font-weight: bold;
+      font-size: 1.2em;
+  }
+
+  .experience-duration {
+      color: #888;
+      font-style: italic;
+  }
+
+  .experience-details {
+      margin-top: 10px;
+  }

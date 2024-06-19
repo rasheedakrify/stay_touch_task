@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Parser</title>
+    <style>
+        /* Basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #file-input {
+            margin-bottom: 20px;
+        }
+        #experiences {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        #experiences th, #experiences td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #experiences th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Resume Parser</h2>
+    <input type="file" id="file-input" accept=".txt">
+    <div id="experience-section">
+        <!-- Experiences will be populated here -->
+    </div>
+
+    <script src="./assets/js/input.js"></script>
+</body>
+</html>
