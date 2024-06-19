@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --primary-color: #7287ae;
+    --secondary-color: #E0EDC1;
+    --font-family: "Ubuntu", sans-serif;
+}
+
+
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #E0EDC1;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.curved-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 20px);
+    background-image: url('../img/banner.png');
+
+
+}
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    background-image: url('../img/bg.png');
+}
+
+.hero-title {
+
+    font-size: 91px;
+    line-height: 93px;
+    font-weight: 800;
+
+}
+
+
+.title-font {
+    font-size: 48px;
+    line-height: 90px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.numbers {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.numbers:hover {
+    color: #fff;
+    background-color: var(--primary-color) !important;
+}
+
+.social-icons {
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    padding: 16px;
+    font-weight: 700;
+
+}
+
+.footer-bg {
+    background-image: url(../img/footer_bg.png);
+    background-color: #DBEAC0;
+    background-size: 100%;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    bottom: -10px
+}
+
+@media screen and (max-width: 768px) {
+    .hero-title {
+        font-size: 45px;
+        line-height: 58px;
+    }
+
+    .title-font {
+        font-size: 35px;
+        line-height: 36px;
+        margin-bottom: 1rem;
+    }
+
+    .curved-banner {
+
+        background: var(--primary-color);
+
+
+    }
+    .text-6xl{
+        font-size: 40px!important;
+    }
+    .text-3xl{
+        font-size: 20px!important;
+    }
+    .banner-text{
+        font-size: 25px!important;
+        line-height: 1.2!important;
+    }
+}
