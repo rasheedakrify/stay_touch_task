@@ -1,0 +1,58 @@
+<div class="dashboard-container">
+  <h2>Dashboard</h2>
+  
+  <div class="d-flex">
+    <div class="search-container">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="applyFilter()">
+
+  </div>
+  <div class="create-meeting">
+          <button routerLink="/create-meeting">Create Meeting</button>
+
+  </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Meeting Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meeting of filteredMeetings; let i = index">
+        <td>{{ meeting.firstName }}</td>
+        <td>{{ meeting.lastName }}</td>
+        <td>{{ meeting.email }}</td>
+        <td>{{ meeting.phone }}</td>
+        <td>{{ meeting.address }}</td>
+        <td>{{ meeting.meetingTime | date:'medium' }}</td>
+        <td>
+          <div class="d-flex">
+          <a  class="edit-icon"(click)="navigateToEdit(meeting.id)">
+     <mat-icon>edit</mat-icon>
+    
+          </a>
+          <a class="delete-icon"(click)="deleteMeeting(meeting.id)">
+     <mat-icon>delete</mat-icon>
+            </a>  
+     </div>
+   
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- Pagination buttons -->
+  <div class="pagination">
+    <button *ngFor="let page of getPages()" (click)="changePage(page)" [class.active]="page === currentPage">
+      {{ page }}
+    </button>
+  </div>
+</div>

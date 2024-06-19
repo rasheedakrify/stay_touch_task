@@ -1,0 +1,7 @@
+<mat-toolbar color="primary">
+  <span>Welcome Admin</span>
+  <span class="spacer"></span>
+  <button *ngIf="showLogout" mat-icon-button (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>

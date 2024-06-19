@@ -1,0 +1,50 @@
+/* create-meeting.component.scss */
+
+.create-meeting-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+ 
+    .mat-form-field {
+      width: 100%;
+    }
+    .mat-form-field-wrapper {
+    padding-bottom: 1em!important;
+}
+
+
+    .mat-datepicker-toggle {
+      color: #007bff;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  }
+}

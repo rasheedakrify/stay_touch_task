@@ -1,0 +1,55 @@
+<div class="create-meeting-container">
+  <h2>Create Meeting</h2>
+  <form [formGroup]="meetingForm" (ngSubmit)="saveMeeting()">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name *</mat-label>
+      <input matInput formControlName="firstName" required>
+      <mat-error *ngIf="meetingForm.get('firstName').hasError('required')">
+        First Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email *</mat-label>
+      <input matInput formControlName="email" required email>
+      <mat-error *ngIf="meetingForm.get('email').hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="meetingForm.get('email').hasError('email')">
+        Invalid email format
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone *</mat-label>
+      <input matInput formControlName="phone" required>
+      <mat-error *ngIf="meetingForm.get('phone').hasError('required') && meetingForm.get('phone').touched">
+        Phone is required
+      </mat-error>
+      <mat-error *ngIf="meetingForm.get('phone').hasError('numeric') && !meetingForm.get('phone').hasError('required') && meetingForm.get('phone').touched">
+        Only numeric characters allowed
+      </mat-error>
+            <mat-error *ngIf="meetingForm.get('phone').hasError('minlength')">Phone must be at least 5 characters long</mat-error>
+      <mat-error *ngIf="meetingForm.get('phone').hasError('maxlength')">Phone cannot be more than 15 characters long</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address">
+    </mat-form-field>
+   <mat-form-field appearance="outline">
+      <mat-label>Meeting Time *</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="meetingTime" [min]="minDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="meetingForm.get('meetingTime').hasError('required')">Meeting Time is required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</div>
